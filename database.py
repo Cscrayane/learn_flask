@@ -19,3 +19,7 @@ def load_job_from_db(id):
     if len(row) == 0:
       return None
     else : return row[0]._asdict()
+
+def add_application_to_db(job_id, application):
+  with engine.connect() as conn:
+    pass
