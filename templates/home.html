@@ -5,24 +5,33 @@
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel='stylesheet' href='templates/style.css'>
-
+    <link rel='stylesheet' href='static/style.css'>
   </head>
   <body>
-    <div class='container'>
+    {% include 'nav.html' %}
     <h1 class='text-center mb-4'>{{company_name}} Careers</h1>
     <img class='img-fluid' src='static/banner.jpg' id='banner'>
+    <div class='container'>
+    
     <h2 class='text-center mt-2'>About Jovian</h2>
-    <p class='lead'>
-      {% for job in jobs %}
-        {% include 'jobitem.html' %}
-      {% endfor %}
-    </p>
-    <h2 class='text-center mt-2'>Open positions</h2>
-    <!--> To do add info </!-->
-      <div class='text-center'>
-        <button class='btn btn-primary'>Contact us</button>
+    <div class='row'>
+      <div class='col-md-6'> 
+    <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultrices, ex ac congue mollis, ex ipsum porttitor elit, et pretium sem quam dapibus orci. Curabitur semper dui vel felis commodo, sit amet euismod turpis molestie. Nulla mollis vitae augue at facilisis. Praesent a efficitur nunc, nec gravida dui. Vestibulum quis orci vel felis vulputate hendrerit nec in urna. Ut iaculis id massa at gravida. Donec gravida sodales purus vitae dignissim. Donec sodales quis metus at tincidunt. Duis vitae magna arcu. Donec ligula orci, lobortis rutrum faucibus tempus, feugiat nec ante.</p>
+      </div>
+      <div class='d-none d-md-block col-md-6'>
+        <img src='/static/people.jpg' class='image-fluid' style='height: 320px; border-radius: 4px;'>
       </div>
     </div>
+    <h2 class='text-center mt-2'>Open positions</h2>
+      <div>
+        {% for job in jobs %}
+          {% include 'jobitem.html' %}
+        {% endfor %}
+      </div>
+      <div class='text-center'>
+        <a href='mailto:meddahra@gmail.com?Subject=Question about jobs opening' class='btn btn-primary'>Contact us</a>
+      </div>
+    </div>
+    {% include 'footer.html' %}
   </body>
 </html>
