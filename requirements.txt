@@ -1,2 +1,4 @@
 Falsk
 gunicorn
+flask
+sqlalchemy

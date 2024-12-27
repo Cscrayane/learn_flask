@@ -2,12 +2,12 @@
   <div class='col-10'>
     <p style='font-size: 25px' class='mb-1'>{{job.title}}</p>
     <p class='mb-0 mt-0'>Location : {{job.location}}</p>
-    {% if 'salary' in job %} 
-     <p class='mb-0 mt-0'>Salary : {{job.salary}}</p>
+    {% if 'salary' in job and job.salary != None %} 
+     <p class='mb-0 mt-0'>Salary : {{job.salary}} {{job.currency}}</p>
     {% endif %}
   </div>
   <div class='col-2'>
-  <a href='mailto:meddahra@gmail.com?subject=Application for {{job.title}}}' type="button" class="btn btn-outline-primary">Apply</a>
+  <a href='mailto:meddahra@gmail.com?subject=Application for {{job.title}}' type="button" class="btn btn-outline-primary">Apply</a>
   </div>
   
 </div>
