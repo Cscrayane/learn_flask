@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{job.title}} career</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'nav.html' %}
+    <div class='container'>
+    <h3>Title</h3>
+    <p>{{job.title}}</p>
+    <h3>Location</h3>
+    <p>{{job.location}}</p>
+    <h3>Salary</h3>
+    <p>{{job.salary}} {{job.currency}}</p>
+    <h3>Responsabilities</h3>
+      <ul>
+        {% for line in job.responsibilities.split('\n') %}
+        <li>{{line}}</li>
+        {% endfor %}
+      </ul>
+    
+    <h3>Requirements</h3>
+      <ol>
+        {% for line in job.requirements.split('\n') %}
+        <li>{{line}}</li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
